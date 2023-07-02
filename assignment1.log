@@ -1,0 +1,106 @@
+1.Write a JavaScript program to display the current day and time in the following format.
+Today is : wednesday.
+Current time is : 10 PM : 30 : 38
+
+function date_time() {
+    var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var d = new Date();
+    day = days[d.getDay()];
+    minute = d.getMinutes();
+    hour = d.getHours();
+    second = d.getSeconds();
+    console.log(`Today is : ${day}.`);
+    console.log(`Current time is : ${hour} : ${minute} : ${second}`);
+}
+undefined
+date_time()
+VM768:9 Today is : Wednesday.
+VM768:10 Current time is : 13 : 16 : 2
+undefined
+
+
+
+2.Write a JavaScript program to get the current date.
+Expected Output :
+mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+
+function date_d(){
+    var d = new Date();
+    console.log(`${d.getMonth()}-${d.getDay()}-${d.getFullYear()}, ${d.getMonth()}/${d.getDay()}/${d.getFullYear()}`);
+}
+undefined
+date_d()
+VM768:11 5-3-2023, 5/3/2023
+undefined
+
+
+3.WAP to print area and perimeter of rectangle , taking input from the user , using prompt
+
+
+function rectange() {
+    length = parseInt(prompt("Enter the length"));
+    width = parseInt(prompt("Enter the width"));
+    perimeter = 2 * (length + width);
+    alert(perimeter);
+}
+undefined
+rectange()
+VM768:12 14
+undefined
+
+
+4.WAP to rotate the string ‘brainmentors in the right direction. This is done by periodically removing one letter from the string end and attaching it to the front.
+input  = brainmentors
+output = sbrainmentor,....,brainmentors
+
+
+var  st='brainmentors';
+var st1=st;
+var st2="";
+var length=st.length;
+function rotate(){
+    for(var i=length-1;i>=0;i--){
+        st2=st1[i]+st2;
+        var value=st2+st.substring(0,i);
+        console.log(value);
+    }
+}
+undefined
+rotate();
+VM124:9 sbrainmentor
+VM124:9 rsbrainmento
+VM124:9 orsbrainment
+VM124:9 torsbrainmen
+VM124:9 ntorsbrainme
+VM124:9 entorsbrainm
+VM124:9 mentorsbrain
+VM124:9 nmentorsbrai
+VM124:9 inmentorsbra
+VM124:9 ainmentorsbr
+VM124:9 rainmentorsb
+VM124:9 brainmentors
+undefined
+
+
+
+5.WAP to find out if 1st January will be a Sunday between 2000 and 2030
+
+
+function check_sun(){
+    for(var year = 2000; year<=2030;year++){
+        var d = new Date(year, 0, 1);
+        if (d.getDay() == 0){
+            console.log(year)
+        }
+    }
+}
+undefined
+check_sun()
+VM1169:5 2006
+VM1169:5 2012
+VM1169:5 2017
+VM1169:5 2023
+undefined
+
+
+

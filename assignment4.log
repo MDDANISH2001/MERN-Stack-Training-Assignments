@@ -1,0 +1,197 @@
+1. Find Occurance of a target value in given array;
+arr= [19, 22, 18, 19, 16, 18, 19, 21, 24];
+target = 19;
+
+
+var arr=[19, 22, 18, 19, 16, 18, 19, 21, 24]
+arr.filter(ele=>ele==19).length;
+VM1005:9 3
+undefined
+
+
+
+2 . Reverse a given string using reverse() method 
+input = "BrainMentors"
+output = "srotnemniarB"
+
+
+input = 'BrainMentors';
+'BrainMentors'
+in_arr = input.split("");
+(12) ['B', 'r', 'a', 'i', 'n', 'M', 'e', 'n', 't', 'o', 'r', 's']
+in_arr.reverse();
+(12) ['s', 'r', 'o', 't', 'n', 'e', 'M', 'n', 'i', 'a', 'r', 'B']
+in_arr.join('');
+'srotneMniarB'
+
+
+
+3. Write a function that takes a string as input and returns the number of vowels (a, e, i, o, u) in the string.
+Count of vowels in string;
+ex:- str = "brainmentors"
+output: count = 4
+
+
+function match_str(str){
+    const count = str.match(/[aeiou]/g).length;
+    return count
+}
+undefined
+function in_str(){
+    var string = prompt("Enter the string");
+    len = match_str(string);
+    console.log(len);
+}
+undefined
+in_str();
+VM3115:4 4
+undefined
+
+
+
+4. Write a function to find the sum of all elements in an array.
+ex:- arr = [1,2,3,4,5];
+output = 15;
+
+
+arr = [1,2,3,4,5];
+(5) [1, 2, 3, 4, 5]
+arr.reduce((acc, ele) => acc + ele, 0);
+15
+
+
+
+5.Write a function to reverse the order of elements in an array.
+don't Use reverse() Method 
+ex:- var arr = ['a','b','c','d','e','f']
+output = ['f','e','d','c','b','a']
+
+
+var arr = ['a','b','c','d','e','f'];
+undefined
+var rev_arr = [];
+undefined
+for (var i = arr.length; i>=0; i--){
+    rev_arr.push(arr[i]);
+}
+7
+re_arr
+VM4401:1 Uncaught ReferenceError: re_arr is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM4401:1
+rev_arr
+(7) [undefined, 'f', 'e', 'd', 'c', 'b', 'a']
+
+
+
+6. Write a function to remove a specific element from an array.
+arr = [1,2,3,4,5];
+remove = 3
+output :- [1,2,4,5]
+
+
+elements = [1,2,3,4,5];
+(5) [1, 2, 3, 4, 5]
+elements.reduce((acc, e) =>{
+    if (e != 3){
+        acc.push(e);
+    }
+    return acc;
+}, []);
+(4) [1, 2, 4, 5]
+
+
+
+7. Write a function to find the second largest number in an array.
+ex:- var arr = [12,4,6,9,2,15,3,9];
+output second largest : 12
+
+
+function secondLargest(arr){
+    var max=Number.MIN_VALUE;
+    var S_max=0;
+    for(ele of arr)
+        { if(ele>max)
+           { S_max=max;
+              max=ele;
+           }
+         else if(ele>S_max && ele<max)
+             {
+                 S_max=ele;
+             }
+
+        }
+
+       return S_max;
+}
+var arr2=[10,20,10,20,30,144,144];
+console.log("second largest :"+secondLargest(arr));
+second largest : 30;
+
+
+
+8.Write a function to rotate an array by a given number of steps to the right.
+ex:- arr = [1,2,3,4,5];
+step = 2;
+output = [5,4,1,2,3]
+
+
+function rotate(arr,n){
+    var ans=[];
+    for(var i=arr.length-1;i>arr.length-1-n;i--)
+        {ans.push(arr[i]);
+        }
+    for(var i=0;i<arr.length-n;i++)
+        {ans.push(arr[i]);
+        }
+    console.log(ans);
+}
+undefined
+rotate(a,2);
+(5) [5, 4, 1, 2, 3]
+
+
+
+9.Write a function to find the intersection of two arrays (common elements between the two arrays).
+ex:- arr1 = [2,4,1,7,4,2] , arr2 = [5,1,4,7,3,1];
+output = [1,4,7]
+
+
+function intersection(x, y) {
+    var n1 = x.sort();
+    var n2 = y.sort();
+    var i = 0;
+    var j = 0;
+    var k =0;
+    var ans = [];
+    while(i < n1.length && j < n2.length){
+        if(n1[i] == n2[j]){
+            ans[k] = n1[i];
+            i++;
+            j++;
+            k++;
+        }
+        else if(n1[i]<n2[j]){
+            i++;
+        }
+        else{
+            j++;
+        }
+    }
+    return ans;
+};
+
+
+
+10.Write a function to remove duplicate elements from an array while preserving the original order.
+ex:- arr = [1,2,5,2,5,1,6,7,7]
+output:- [1,2,5,6,7]
+
+
+function removeDuplicates(){
+    var a = [1,2,5,2,5,1,6,7,7];
+    return a.filter ((ele, id) => a.indexOf(ele) == id);
+}
+undefined
+removeDuplicates()
+(5) [1, 2, 5, 6, 7]

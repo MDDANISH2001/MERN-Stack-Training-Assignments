@@ -1,0 +1,145 @@
+11.Write a function calculate that takes three arugments from the user, say num1 , num2, and operation(1==add, 2==subtract, 
+3==multiply, 4==divide ).Don`t use switch statement or if else statements
+1.add,
+2.subtract,
+3.multiply,
+4.divide 
+write the calc function for all the operations
+
+
+function clac() {
+    num1 = parseFloat(prompt("Enter first number"));
+    num2 = parseFloat(prompt("Enter second number"));
+    num3 = parseFloat(prompt("1 = add ; 2 = sub ; 3 = mul; 4 = div"));
+    function add(num1, num2){
+        return num1 + num2;
+    }
+    function sub(num1, num2){
+        return num1 - num2;
+    }
+    function mul(num1, num2){
+        return num1 * num2;
+    }
+    function div(num1, num2){
+        return num1 / num2;
+    }
+    var obje = {1:add(num1, num2), 2:sub(num1, num2), 3:mul(num1, num2), 4:div(num1, num2)};
+    return obje[num3];
+}
+undefined
+clac()
+10
+
+
+
+12 . Create a function Named Triangle which takes 3 parameters, say A, B and C denoting the 3 sides of a triangle.
+Use Callback function, create a method to check if the triangle is Equilateral or not.
+Output:
+"true" if the triangle is equilateral and "false" if its not.
+
+
+function equilateral(a, b, c){
+        return a===b & b===c ? "Equilateral": "Not Equilateral";
+}
+function check(equilateral) {
+    var a = parseInt(prompt("Enter side A"));
+    var b = parseInt(prompt("enter side B"));
+    var c = parseInt(prompt("Enter side C"));
+    if (equilateral(a, b, c)){
+        console.log("True")
+    }
+    
+}
+undefined
+check(equilateral)
+VM1005:9 True
+undefined
+
+
+
+13.Given two strings, return true if they are anagrams of one another
+For example: Mary is an anagram of Army
+
+
+function checkAnagram(str1,str2){
+    for(var i=0;i<str1.length;i++){
+        var ch=str1.charAt(i);var count=0;
+        for(var j=0;j<str2.length;j++){
+            if(ch===str2[i]){
+                count++;
+            }
+        }
+       
+    }
+     if(count===str1.length){
+            console.log('True');
+        }
+        else{
+            console.log('False');
+        }
+}
+
+undefined
+checkAnagram('Mary','Army');
+VM137:12 True
+undefined
+
+
+
+14.Compute HRA, DA, TA, GS, NS.
+HRA is 30% of Basic Salary.
+DA is 10% of Basic Salary.
+TA is 20% of Basic Salary.
+GS = Basic Salary + HRA + DA + TA;
+TAX DEDUCTION is 10% of GS.
+NS = GS - TAX DEDUCTION.
+NOte : Use Basic Salary in Lexical Scope 
+Print salary slip of the employee.
+
+
+function employee(id,name,basic_salary){
+    var hra,da,ta;
+    function compute(){
+         hra=0.3*basic_salary;
+         da=0.1*basic_salary;
+         ta=0.2*basic_salary;
+        var gs=basic_salary+hra+da+ta;
+    var tax=0.10*gs;
+    var net_salary=gs-tax;
+    console.log(`id: ${id} name:${name}, net_salary:${net_salary}`);
+    }
+    
+    return {compute};
+}
+undefined
+employee(1001,'Danish',20000).compute();
+VM170:10 id: 1001 name:Danish, net_salary:28800
+undefined
+
+
+
+15. Write a function to find the maximum and minimum elements in an array.
+arr = [10,3,15,-1,9,6]
+output = maxno. : 15
+minno. : -1
+
+
+function minMax(){
+var arr = [10,3,15,-1,9,6];
+    var min=0;var max=0;
+    for(var i=0;i<arr.length;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+        if(arr[i]<min){
+            min=arr[i];
+        }
+    }
+    console.log('maxno.',max);
+    console.log("minno.",min);
+}
+undefined
+minMax();
+VM200:12 maxno.  15
+VM200:13 minno.  -1
+undefined
